@@ -1,3 +1,21 @@
+///////////////////////////////////////////////////////////////////////////////
+//                   
+// Author:           (your name)
+// Email:            (your email address)
+// Label:            (program's label from assignment list)
+// Title:            (short title from assignment, if any)
+// Course:           (course number and prefix)
+// Semester:         (semester and year)
+//
+// Description:
+//       describe program here thoroughly 
+//
+// Usage:
+//       how to use the program if necessary
+//
+// Files:            (list of all source files used in this program)
+/////////////////////////////////////////////////////////////////////////////////
+
 #include <iostream>
 
 using namespace std;
@@ -20,6 +38,28 @@ struct Node
     }
 };
 
+/**
+ * Class Name
+ * 
+ * Description:
+ *      Description of your class and what it does
+ * 
+ * Public Methods:
+ *      - A list of 
+ *      - each public method
+ *      - with return types
+ * 
+ * Private Methods:
+ *      - A list of 
+ *      - each private method
+ *      - with return types
+ * 
+ * Usage: 
+ * 
+ *      - examples of how
+ *      - to use your class 
+ *      
+ */
 class List
 {
   private:
@@ -51,6 +91,21 @@ class List
         Size++;
     }
 
+     /**
+     * Public/Private/Protected : function_name
+     * 
+     * Description:
+     *      Describe the functions purpose
+     * 
+     * Params:
+     *      - list params
+     *      - one per line
+     *      - with return type
+     *      - and one line description
+     * 
+     * Returns:
+     *      - what does this function return (including the type)?
+     */
     void Insert(int val)
     {
         // allocate new memory and init node
