@@ -1,11 +1,11 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                   
-// Author:           (your name)
-// Email:            (your email address)
-// Label:            (program's label from assignment list)
-// Title:            (short title from assignment, if any)
-// Course:           (course number and prefix)
-// Semester:         (semester and year)
+// Author:           Jeff Reeve
+// Email:            Reeve.jeff@yahoo.com
+// Label:            02-CommentedCode
+// Title:            Commenting c++ code
+// Course:           2143-OOP
+// Semester:         Spring 2020
 //
 // Description:
 //       describe program here thoroughly 
@@ -39,25 +39,28 @@ struct Node
 };
 
 /**
- * Class Name
+ * List
  * 
  * Description:
- *      Description of your class and what it does
+ *      Class holds a linked list and related methods
  * 
  * Public Methods:
- *      - A list of 
- *      - each public method
- *      - with return types
+ *      - void push
+ *      - void insert
+ *      - void printTail
+ *      - void print
+ *      - int pop
+ *      - int operator+
+ *      - int operator[]
  * 
  * Private Methods:
- *      - A list of 
- *      - each private method
- *      - with return types
+ *      NONE
  * 
  * Usage: 
  * 
- *      - examples of how
- *      - to use your class 
+ *      list List1
+ *      list1.push(4);
+ *      list1.print():
  *      
  */
 class List
@@ -74,6 +77,19 @@ class List
         Size = 0;
     }
 
+    /**
+     * Public : Push
+     * 
+     * Description:
+     *      add a integer to the end of the list
+     * 
+     * Params:
+     *      - int val
+     *      value to be added to the list
+     * 
+     * Returns:
+     *      - NONE
+     */
     void Push(int val)
     {
         // allocate new memory and init node
@@ -90,22 +106,7 @@ class List
         }
         Size++;
     }
-
-     /**
-     * Public/Private/Protected : function_name
-     * 
-     * Description:
-     *      Describe the functions purpose
-     * 
-     * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
-     * 
-     * Returns:
-     *      - what does this function return (including the type)?
-     */
+    
     void Insert(int val)
     {
         // allocate new memory and init node
