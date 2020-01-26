@@ -4,4 +4,4 @@
 #### Image: 
 ![Pic](https://i.imgur.com/Q8lcr4s.jpg)
 #### Avatar: 
-![Avatar](https://imgur.com/i8fjXUH)
+![Avatar](https://i.imgur.com/i8fjXUH.jpg)
