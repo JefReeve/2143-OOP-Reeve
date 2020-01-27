@@ -8,12 +8,12 @@
 // Semester:         Spring 2020
 //
 // Description:
-//       describe program here thoroughly 
+//       Program with a basic linked list and overloaded operators.
 //
 // Usage:
-//       how to use the program if necessary
+//       
 //
-// Files:            (list of all source files used in this program)
+// Files:            
 /////////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
@@ -79,6 +79,7 @@ struct Node
 class List
 {
   private:
+    //head and tail pointer to dictate the beginning and end of the list
     Node *Head;
     Node *Tail;
     int Size;
@@ -116,6 +117,7 @@ class List
         }
         else
         {
+            //adds new node at the end of the list and sets that to be the last item
             Tail->next = Temp;
             Tail = Temp;
         }
