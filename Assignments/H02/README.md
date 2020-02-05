@@ -23,7 +23,6 @@
 
 
 
-
 ## Hand
 * Hold cards
 * Receive cards
