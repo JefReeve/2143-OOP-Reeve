@@ -248,6 +248,56 @@ class MyVector {
     return V;
   }
 
+//****************************************************************************
+    bool operator<(const Node<int>* rhs) {
+      int num1 = this->data;
+      int num2 = rhs->data;
+      bool v = false;
+
+      if(num1 < num2){
+        v = true;
+      }
+
+    return v;
+  }
+
+      bool operator>(const Node<int>* rhs) {
+      int num1 = this->data;
+      int num2 = rhs->data;
+      bool v = false;
+
+      if(num1 > num2){
+        v = true;
+      }
+
+    return v;
+  }
+
+      bool operator==(const Node<int>* rhs) {
+      int num1 = this->data;
+      int num2 = rhs->data;
+      bool v = false;
+
+      if(num1 == num2){
+        v = true;
+      }
+
+    return v;
+  }
+
+      bool operator!=(const Node<int>* rhs) {
+      int num1 = this->data;
+      int num2 = rhs->data;
+      bool v = false;
+
+      if(num1 != num2){
+        v = true;
+      }
+
+    return v;
+  }
+
+//****************************************************************************
   // The sort will still work??
   // It should as long as the "T" values are defined
   // to use comparison operators (we will discuss later).
