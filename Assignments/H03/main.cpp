@@ -19,6 +19,18 @@
                             
 */
 
+
+
+
+
+
+
+
+
+
+
+
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 // Author:           Terry Griffin
@@ -249,7 +261,10 @@ class MyVector {
   }
 
 //****************************************************************************
-    bool operator<(const Node<int>* rhs) {
+  // This is the "<" sign being overloaded to
+  // compare the data in two nodes returning a
+  // true or false value.
+    bool operator<(const Node<T>* rhs) {
       int num1 = this->data;
       int num2 = rhs->data;
       bool v = false;
@@ -261,7 +276,10 @@ class MyVector {
     return v;
   }
 
-      bool operator>(const Node<int>* rhs) {
+  // This is the ">" sign being overloaded to
+  // compare the data in two nodes returning a
+  // true or false value.
+      bool operator>(const Node<T>* rhs) {
       int num1 = this->data;
       int num2 = rhs->data;
       bool v = false;
@@ -273,7 +291,10 @@ class MyVector {
     return v;
   }
 
-      bool operator==(const Node<int>* rhs) {
+  // This is the "==" sign being overloaded to
+  // compare the data in two nodes returning a
+  // true or false value.
+      bool operator==(const Node<T>* rhs) {
       int num1 = this->data;
       int num2 = rhs->data;
       bool v = false;
@@ -285,7 +306,10 @@ class MyVector {
     return v;
   }
 
-      bool operator!=(const Node<int>* rhs) {
+  // This is the "!=" sign being overloaded to
+  // compare the data in two nodes returning a
+  // true or false value.
+      bool operator!=(const Node<T>* rhs) {
       int num1 = this->data;
       int num2 = rhs->data;
       bool v = false;
