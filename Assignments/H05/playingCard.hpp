@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-//using namespace std;
+using namespace std;
 using namespace Term;
 
 const string spade = "♠";
@@ -170,19 +170,21 @@ void Card::setBackgroundColor(string newColor){
 }
 
 void Card::setColors(string fore,string back){
-    color = fore;
+    foreColor = fore;
     backColor = back;
+    color = "&" + foreColor + backColor;
+    
 }
 
-void setSuitColor(string newColor){
-    suitColor = newColor;
+void Card::setSuitColor(string newColor){
+    suitColor = "&" + backColor + newColor;
 }
 
-void setRankColor(string newColor){
-    rankColor = newColor;
+void Card::setRankColor(string newColor){
+    rankColor = "&" + backColor + newColor;
 }
 
-void setColors(string fore, string back, string symbol, string number){
+void Card::setColors(string fore, string back, string symbol, string number){
     color = fore;
     backColor = back;
     suitColor = symbol;
