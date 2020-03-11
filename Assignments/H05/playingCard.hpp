@@ -42,7 +42,10 @@ private:
     string suitChar; // "♠", "♦", "♣", "♥"
     string rankChar; // Ace, 1 ,2 ,3 ... Q, K
     string color;    // Spade=blue, Diamond=red, etc.
+    string foreColor;// edges of cards and default otherwise
     string backColor;// Defaults to white
+    string suitColor;// color of suit, defaults to color
+    string rankColor;// color of number/rank, defaults to color
 
 public:
     friend ostream;
@@ -54,11 +57,11 @@ public:
     bool operator==(const Card &);
     bool operator!=(const Card &);
     bool operator()(const Card &);
-    void setForegroundColor(string color);       // set foreground color of card
-    void setBackgroundColor(string color);      // set background color of card
+    void setForegroundColor(string newColor);       // set foreground color of card
+    void setBackgroundColor(string newColor);      // set background color of card
     void setColors(string fore,string back);      // set fore and back
-    void setCharacterColor(string color);        // set symbol color 
-    void setNumberColor(string color);          // set number color
+    void setSuitColor(string newColor);        // set symbol color 
+    void setRankColor(string newColor);          // set number color
     void setColors(string fore, string back, string symbol, string number);
     // and any other overloaded convenience methods you want to add. 
 
@@ -85,6 +88,8 @@ Card::Card(int num) {
     rank = number % 13;
     rankChar = ranks[rank];
     backColor = "White";
+    suitColor = color;
+    rankColor = color;
 }
 
 /**
@@ -107,7 +112,7 @@ string Card::Repr() {
     if (rank != 9) {
         s += color + " ";
     }
-    s += color + rankChar + " " + suitChar + "│&00 \n";
+    s += rankColor + rankChar + " " + suitColor + suitChar + "│&00 \n";
     s += color + "└────┘&00 ";
     return s;
 }
@@ -157,7 +162,7 @@ bool Card::operator()(const Card &rhs) {
 }
 
 void Card::setForegroundColor(string newColor){
-    color = newColor;
+    foreColor = newColor;
 }
 
 void Card::setBackgroundColor(string newColor){
@@ -167,4 +172,19 @@ void Card::setBackgroundColor(string newColor){
 void Card::setColors(string fore,string back){
     color = fore;
     backColor = back;
+}
+
+void setSuitColor(string newColor){
+    suitColor = newColor;
+}
+
+void setRankColor(string newColor){
+    rankColor = newColor;
+}
+
+void setColors(string fore, string back, string symbol, string number){
+    color = fore;
+    backColor = back;
+    suitColor = symbol;
+    rankColor = number;
 }
