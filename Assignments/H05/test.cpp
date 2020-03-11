@@ -7,11 +7,13 @@ using namespace Term;
 
 int main()
 {
-    Card c(0);
-    string test = "&60Test";
+    Card c(50);
+    Card d(0);
+    string test = "&60Test\n";
     string test2 = "LOL";
     
-    cout << "\n\n\n" << c << "\n\n";
+    cout << "\n" << c << "\n\n";
+    cout << "\n" << d << "\n\n";
     cout << test;
     cout << test2 << std::endl;
     cout << fuse(test,test2);
