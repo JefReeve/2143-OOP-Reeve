@@ -7,14 +7,14 @@ using namespace Term;
 
 int main()
 {
-    Card c(50);
+    Card c(0);
     Card d(0);
-    string test = "&60Test\n";
-    string test2 = "LOL";
+
+    d.setBackgroundColor("Magenta");
+    d.setForegroundColor("Yellow");
+    d.setSuitColor("Blue");
+    d.setRankColor("Cyan");
     
     cout << "\n" << c << "\n\n";
     cout << "\n" << d << "\n\n";
-    cout << test;
-    cout << test2 << std::endl;
-    cout << fuse(test,test2);
 }
