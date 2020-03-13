@@ -19,13 +19,15 @@ int main()
     card1 += "&28└──┘\n";
 
 
-    d.setBackgroundColor("Black");
+    d.setBackgroundColor("Cyan");
     d.setForegroundColor("Green");
     d.setSuitColor("Yellow");
     d.setRankColor("Magenta");
     
     io << "\n" << c << "\n\n";
     io << "\n" << d << "\n\n";
+
+    io << trio::fuse(c.Repr(),d.Repr()) << "\n\n";
 
     io << card1;
 }
