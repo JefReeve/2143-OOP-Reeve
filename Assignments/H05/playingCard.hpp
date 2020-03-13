@@ -1,11 +1,11 @@
-#include "termio.h"
+#include "TrIO.hpp"
 #include <algorithm> // std::random_shuffle
 #include <iostream>
 #include <string>
 #include <vector>
 
 using namespace std;
-using namespace Term;
+//using namespace Term;
 
 const string spade = "♠";
 const string diamond = "♦";
@@ -15,10 +15,7 @@ const string club = "♣";
 const string suits[4] = {"♠", "♦", "♣", "♥"};
 
 // Black background        blue ,  red , blue , red
-const string colors2[4] = {"&60", "&20", "&60", "&20"};
-
-// Colored background      blue  , red  , blue , red
-const string colors[4] = {"&16", "&12", "&16", "&12"};
+const string colors[4] = {"&58", "&28", "&58", "&28"};
 
 // Card labels (could be "Iron Man" or "Charmander" or "Elf" ... anything)
 const string ranks[13] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
@@ -118,7 +115,7 @@ string Card::Repr() {
     // if (rank != 9) {
     //     s += color + " ";
     // }
-    s += rankColor + rankChar + " " + suitColor + suitChar + "│&00 \n";
+    s += rankColor + rankChar + " " + suitColor + suitChar + color + " │&00 \n";
     s += color + "└────┘&00 ";
     return s;
 }
@@ -141,6 +138,13 @@ string Card::Repr() {
  *      [ostream&]
  */
 ostream &operator<<(ostream &os, Card obj) {
+
+    os << obj.Repr();
+
+    return os;
+}
+
+trio::IO &operator<<(trio::IO &os, Card obj) {
 
     os << obj.Repr();
 
@@ -194,29 +198,31 @@ string Card::getColor(string text){
 
 void Card::setForegroundColor(string newColor){
     foreColor = getColor(newColor);
-    color = "&" + backColor + foreColor;
+    color = "&" + foreColor + backColor;
 }
 
 void Card::setBackgroundColor(string newColor){
     backColor = getColor(newColor);
-    color = "&" + backColor + foreColor;
-    suitColor = "&" + backColor + foreColor;
-    rankColor = "&" + backColor + foreColor;
+    color = "&" + foreColor + backColor;
+    suitColor = "&" + foreColor + backColor;
+    rankColor = "&" + foreColor + backColor;
 }
 
 void Card::setColors(string fore,string back){
     foreColor = fore;
     backColor = back;
     color = "&" + getColor(backColor) + getColor(foreColor);
+    suitColor = "&" + foreColor + backColor;
+    rankColor = "&" + foreColor + backColor;
     
 }
 
 void Card::setSuitColor(string newColor){
-    suitColor = "&" + backColor + getColor(newColor);
+    suitColor = "&" + getColor(newColor) + backColor;
 }
 
 void Card::setRankColor(string newColor){
-    rankColor = "&" + backColor + getColor(newColor);
+    rankColor = "&" + getColor(newColor) + backColor ;
 }
 
 void Card::setColors(string fore, string back, string symbol, string number){
@@ -224,5 +230,5 @@ void Card::setColors(string fore, string back, string symbol, string number){
     backColor = back;
     suitColor = symbol;
     rankColor = number;
-    color = "&" + backColor + foreColor;
+    color = "&" + foreColor + backColor;
 }
