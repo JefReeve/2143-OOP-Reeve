@@ -9,3 +9,4 @@
 | H04 | [H04-PokerGameDesign](https://github.com/JefReeve/2143-OOP-Reeve/tree/master/Assignments/H04) | Basic UML poker game design |
 | H05 | [H05-PlayingCards](https://github.com/JefReeve/2143-OOP-Reeve/tree/master/Assignments/H05) | Basic card design not just for poker| 
 | P01 | [P01-GameOfWar](https://github.com/JefReeve/2143-OOP-Reeve/tree/master/Assignments/P01) | Basic simulated game of war |
+| P03 | [P01-CovidSimulation](https://github.com/JefReeve/2143-OOP-Reeve/tree/master/Assignments/P03) | Basic UML covid simulation |
