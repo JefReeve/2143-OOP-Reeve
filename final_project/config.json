@@ -1,0 +1,40 @@
+{
+    "sprite": 
+        {
+        "width": 8,
+        "height": 20,
+        "speed": 4
+        }
+    ,
+    "images": {
+        "blue": "./images/person_blue_64x64.png",
+        "light_blue": "./images/person_light_blue_64x64.png",
+        "red": "./images/person_red_64x64.png",
+        "white": "./images/person_white_64x64.png",
+        "yellow": "./images/person_yellow_64x64.png",
+        "orange": "./images/person_orange_64x64.png",
+        "green": "./images/person_green_64x64.png",
+        "black": "./images/person_black_64x64.png"
+    },
+    "game": {
+        "width": 1200,
+        "height": 800,
+        "day": 0,
+        "fps": 40,
+        "loop_count": 0
+    },
+    "sim": {
+        "infection_rate": 0.2,
+        "death_rate": 0.05,
+        "quarantine_rate": 0.9,
+        "population_count": 300,
+        "num_infected": 3,
+        "quarantine_days": 14,
+        "recover_lower_limit": 10,
+        "recover_upper_limit": 14,
+        "death_lower_limit": 7,
+        "death_upper_limit": 10,
+        "symptoms_lower_limit": 2,
+        "symptoms_upper_limit": 8
+    }
+}
