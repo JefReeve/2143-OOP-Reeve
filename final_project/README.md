@@ -1,9 +1,9 @@
 # Jeff Reeve's Basic epidemic simulation
 ###### The code uses python and pygame to simulate a disease's spread in a comunity.
 ###### Changing the numbers the config.json will allow control over most of the simulation.
-## Config.json variables:
+## Config.json parameters:
 #### "game" section's main variables are the width and height which change the game windows size
-#### "sim" section's variables:
+#### "sim" section's parameters:
 infection_rate = chance of the infection spreading from an infected to a susceptiple person, triggers once per collision
 
 death_rate = chance of dying from the disease, triggers once on a random day within limits below
