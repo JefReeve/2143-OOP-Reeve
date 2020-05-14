@@ -180,22 +180,22 @@ class Person(pygame.sprite.Sprite):
 
     # checks for changes in a persons status(death, recoveries, getting put in and out of quarantine)
     def check_status(self):
-        if config["game"]["loop_count"] / 40 == self.infection_day + self.death_day:
+        if config["game"]["loop_count"] / config["game"]["fps"] == self.infection_day + self.death_day:
             death = random.random()
             if death <= config["sim"]["death_rate"]:
                 return 1
 
-        if config["game"]["loop_count"] / 40 == self.infection_day + self.recover_day:
+        if config["game"]["loop_count"] / config["game"]["fps"] == self.infection_day + self.recover_day:
             return 2
 
-        if config["game"]["loop_count"] / 40 == self.infection_day + self.quarantine_day:
+        if config["game"]["loop_count"] / config["game"]["fps"] == self.infection_day + self.quarantine_day:
             self.quarantine = random.random()
             if self.quarantine <= config["sim"]["quarantine_rate"]:
                 self.rect.x = random.randint(config["game"]["width"]//1.25, config["game"]["width"])
                 self.rect.y = random.randint(0, config["game"]["height"])
                 return 3
 
-        if config["game"]["loop_count"] / 40 == self.infection_day + self.quarantine_day + config["sim"]["quarantine_days"]:
+        if config["game"]["loop_count"] / config["game"]["fps"] == self.infection_day + self.quarantine_day + config["sim"]["quarantine_days"]:
             self.quarantine_check = False
             return 4
         return 0
@@ -297,7 +297,7 @@ class Simulation:
                                     self.population[i].image = pygame.image.load(config["images"][self.population[i].color])
                                     self.population[i].image = pygame.transform.scale(self.population[i].image,
                                                                 (self.population[i].width, self.population[i].height))
-                                    self.population[i].infection_day = config["game"]["loop_count"] / 40
+                                    self.population[i].infection_day = config["game"]["loop_count"] / config["game"]["fps"]
                                     self.num_infected += 1                            
                         
                         # doubled up on this since sometimes infected people collide with susceptible people and vice versa
@@ -310,7 +310,7 @@ class Simulation:
                                     self.population[j].image = pygame.image.load(config["images"][self.population[j].color])
                                     self.population[j].image = pygame.transform.scale(self.population[j].image,
                                                                 (self.population[j].width, self.population[j].height))
-                                    self.population[j].infection_day = config["game"]["loop_count"] / 40                            
+                                    self.population[j].infection_day = config["game"]["loop_count"] / config["game"]["fps"]                            
                                     self.num_infected += 1
 
             # checks the status of infected and quarantined people
@@ -489,7 +489,7 @@ if __name__ == '__main__':
         # calculates each of stats at the end of each frame
         pop = sim.get_population_count()
         inf = sim.get_num_infected()
-        day = config["game"]["loop_count"] / 40
+        day = config["game"]["loop_count"] / config["game"]["fps"]
         dead = sim.get_num_dead()
         num_quarantined = sim.get_num_quarantined()
         stat_string = f"Day: {int(day)}, Population size: {pop}, Number of infected: {inf}, Number of dead: {dead}, Number of quarantined: {num_quarantined}"
