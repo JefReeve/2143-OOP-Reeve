@@ -19,7 +19,6 @@
     "game": {
         "width": 1200,
         "height": 800,
-        "day": 0,
         "fps": 40,
         "loop_count": 0
     },
