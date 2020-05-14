@@ -3,9 +3,9 @@
 ###### Changing the numbers the config.json will allow control over most of the simulation.
 ## Config.json parameters:
 #### "game" section's main variables are the width and height which change the game windows size
-day = the amount of days that have passed, changing this will change the starting day
 fps = frames per second, higher frames will make the simulation smoother but at the cost of computer resources
 loop_count = amount of frames past(recomended not to change as it wont really make a difference exept to change the starting day)
+(days are calculated by loop_count / fps)
 #### "sim" section's parameters:
 infection_rate = chance of the infection spreading from an infected to a susceptiple person, triggers once per collision
 
